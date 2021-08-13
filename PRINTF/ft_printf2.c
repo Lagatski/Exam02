@@ -122,9 +122,9 @@ int ft_printf(const char *str, ... )
 {
     result = 0;
     int i = 0;
-    va_list ap;
+    va_list arg;
 
-    va_start(ap, str);
+    va_start(arg, str);
     while (str[i] != '\0')
     {
         if (str[i] == '%' && str[i+1] != '\0')
@@ -148,11 +148,11 @@ int ft_printf(const char *str, ... )
                 }
             }
             if (str[i] == 's')
-                ft_printf_s(va_arg(ap, char *));
+                ft_printf_s(va_arg(arg, char *));
             else if (str[i] == 'x')
-                ft_printf_x(va_arg(ap, unsigned int));
+                ft_printf_x(va_arg(arg, unsigned int));
             else if (str[i] == 'd')
-                ft_printf_d(va_arg(ap, int));
+                ft_printf_d(va_arg(arg, int));
             else
                 ft_putchar(str[i]);
         }
@@ -161,7 +161,7 @@ int ft_printf(const char *str, ... )
         i++;
 
     }
-    va_end(ap);
+    va_end(arg);
     return (result);
 }
 
