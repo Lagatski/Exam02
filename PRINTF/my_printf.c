@@ -31,7 +31,6 @@ static int ft_strlen(char *str)
 	return(len);
 }
 
-
 static char *ft_itoa(unsigned long nbr, int base)
 {
 	unsigned long temp_nbr = nbr;
@@ -58,6 +57,11 @@ static char *ft_itoa(unsigned long nbr, int base)
 		len--;
 	}
 	return (str);
+}
+
+int	ft_print_d(long nbr)
+{
+	
 }
 
 int	ft_printf(const char *str, ...)
